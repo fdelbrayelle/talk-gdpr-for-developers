@@ -1,0 +1,21 @@
+{
+  "values" : [ {
+    "serviceId" : "init"
+  }, {
+    "serviceId" : "maven-java"
+  }, {
+    "serviceId" : "sonar-java-backend-and-frontend"
+  }, {
+    "serviceId" : "java-base"
+  }, {
+    "serviceId" : "frontend-maven-plugin"
+  }, {
+    "serviceId" : "springboot"
+  }, {
+    "serviceId" : "springboot-tomcat"
+  }, {
+    "serviceId" : "postgresql"
+  }, {
+    "serviceId" : "react-styled"
+  } ]
+}

@@ -1,0 +1,26 @@
+# Prettier configuration
+
+printWidth: 140
+singleQuote: true
+tabWidth: 2
+useTabs: false
+endOfLine: "lf"
+
+# js and ts rules:
+arrowParens: avoid
+
+# jsx and tsx rules:
+bracketSameLine: false
+
+# search additional plugin, following prettier 2.6.0
+pluginSearchDirs:
+  - .
+
+# java rules:
+overrides:
+  - files: "*.java"
+    options:
+      tabWidth: 2
+
+# xml rules:
+xmlWhitespaceSensitivity: ignore
