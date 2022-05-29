@@ -11,7 +11,11 @@ export default defineConfig({
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src/main/webapp/app') }],
   },
   root: 'src/main/webapp',
+  define: {
+    'process.env': {},
+  },
   server: {
     port: 9000,
+    hmr: { overlay: false },
   },
 });
