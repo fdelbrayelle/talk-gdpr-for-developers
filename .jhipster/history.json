@@ -29,5 +29,8 @@
   }, {
     "serviceId" : "liquibase",
     "timestamp" : "2022-05-29T14:48:56.828462076Z"
+  }, {
+    "serviceId" : "springdoc-openapi",
+    "timestamp" : "2022-05-29T15:21:59.422909743Z"
   } ]
 }
