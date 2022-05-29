@@ -107,6 +107,10 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+    </dependency>
     <!-- jhipster-needle-maven-add-dependency -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -141,6 +145,11 @@
       <groupId>org.testcontainers</groupId>
       <artifactId>postgresql</artifactId>
       <version>${testcontainers.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- jhipster-needle-maven-add-dependency-test -->
