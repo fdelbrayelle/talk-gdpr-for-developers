@@ -13,7 +13,18 @@ export const About = () => {
   const [success, setSuccess] = useState<any>(false);
 
   const onSubmit = (loginData: any) => {
-    if (loginData.name && loginData.surname && loginData.address && loginData.phoneNumber && loginData.accept) {
+    console.log(loginData);
+    if (
+      loginData.lastname &&
+      loginData.firstname &&
+      loginData.address.number &&
+      loginData.address.street &&
+      loginData.address.city &&
+      loginData.address.zipCode &&
+      loginData.address.country &&
+      loginData.phoneNumber &&
+      loginData.accept
+    ) {
       customer({ ...loginData }, setSuccess);
       setError(false);
     } else setError(true);
@@ -32,7 +43,7 @@ export const About = () => {
             size="lg"
             placeholder="Nom"
             contentLeft={<User />}
-            {...register('name')}
+            {...register('lastname')}
           />
           {/* dans le ...register t'ajoute le nom de la donnée que tu veux renvoyer au back */}
           <Spacer y={1} />
@@ -46,7 +57,7 @@ export const About = () => {
             size="lg"
             placeholder="Prénom"
             contentLeft={<User />}
-            {...register('surname')}
+            {...register('firstname')}
           />
           <Spacer y={1} />
           <Input
@@ -69,10 +80,63 @@ export const About = () => {
             aria-label="modal-login-username"
             data-testid="modal-login-username"
             color="primary"
+            type="number"
             size="lg"
-            placeholder="Adresse"
+            placeholder="Numéro de rue"
             contentLeft={<Home />}
-            {...register('address')}
+            {...register('address.number')}
+          />
+          <Spacer y={1} />
+          <Input
+            width="350px"
+            clearable
+            bordered
+            aria-label="modal-login-username"
+            data-testid="modal-login-username"
+            color="primary"
+            size="lg"
+            placeholder="Rue"
+            contentLeft={<Home />}
+            {...register('address.street')}
+          />
+          <Spacer y={1} />
+          <Input
+            width="350px"
+            clearable
+            bordered
+            aria-label="modal-login-username"
+            data-testid="modal-login-username"
+            color="primary"
+            size="lg"
+            placeholder="Vile"
+            contentLeft={<Home />}
+            {...register('address.city')}
+          />
+          <Spacer y={1} />
+          <Input
+            width="350px"
+            clearable
+            bordered
+            aria-label="modal-login-username"
+            data-testid="modal-login-username"
+            color="primary"
+            size="lg"
+            placeholder="Code postal"
+            contentLeft={<Home />}
+            {...register('address.zipCode')}
+          />
+          <Spacer y={1} />
+          <Input
+            width="350px"
+            clearable
+            bordered
+            aria-label="modal-login-username"
+            data-testid="modal-login-username"
+            color="primary"
+            size="lg"
+            placeholder="Pays"
+            contentLeft={<Home />}
+            {...register('address.country')}
           />
           <Spacer y={1} />
           <Radio.Group size="sm" value="homme">
