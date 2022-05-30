@@ -1,21 +1,36 @@
 {
   "values" : [ {
-    "serviceId" : "init"
+    "serviceId" : "init",
+    "timestamp" : null
   }, {
-    "serviceId" : "maven-java"
+    "serviceId" : "maven-java",
+    "timestamp" : null
   }, {
-    "serviceId" : "sonar-java-backend-and-frontend"
+    "serviceId" : "sonar-java-backend-and-frontend",
+    "timestamp" : null
   }, {
-    "serviceId" : "java-base"
+    "serviceId" : "java-base",
+    "timestamp" : null
   }, {
-    "serviceId" : "frontend-maven-plugin"
+    "serviceId" : "frontend-maven-plugin",
+    "timestamp" : null
   }, {
-    "serviceId" : "springboot"
+    "serviceId" : "springboot",
+    "timestamp" : null
   }, {
-    "serviceId" : "springboot-tomcat"
+    "serviceId" : "springboot-tomcat",
+    "timestamp" : null
   }, {
-    "serviceId" : "postgresql"
+    "serviceId" : "postgresql",
+    "timestamp" : null
   }, {
-    "serviceId" : "react-styled"
+    "serviceId" : "react-styled",
+    "timestamp" : null
+  }, {
+    "serviceId" : "liquibase",
+    "timestamp" : "2022-05-29T14:48:56.828462076Z"
+  }, {
+    "serviceId" : "springdoc-openapi",
+    "timestamp" : "2022-05-29T15:21:59.422909743Z"
   } ]
 }
