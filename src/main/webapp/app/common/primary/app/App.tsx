@@ -1,4 +1,4 @@
-import LoginForm from '@/login/primary/LoginForm';
+import { LoginForm } from '@/login/primary/LoginForm';
 
 import './App.css';
 

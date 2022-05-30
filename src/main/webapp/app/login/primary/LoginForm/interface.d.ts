@@ -1,9 +1,9 @@
-type LoginModalType = {
+type LoginFormType = {
   open: boolean;
   onClose: () => void;
 };
 
-type LoginModalDataType = {
+type LoginFormDataType = {
   username: string;
   password: string;
   rememberMe: boolean;
