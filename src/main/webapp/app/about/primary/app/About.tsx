@@ -5,7 +5,7 @@ import { Call, Home, Password, User } from 'react-iconly';
 import { useForm } from 'react-hook-form';
 import { customer } from '@/about/services/customer';
 
-import './About.css';
+import './About.scss';
 
 export const About = () => {
   const { register, handleSubmit } = useForm();
@@ -34,113 +34,121 @@ export const About = () => {
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Input
-            width="350px"
+            fullWidth
             clearable
             bordered
             aria-label="modal-login-username"
             data-testid="modal-login-username"
             color="primary"
             size="lg"
-            placeholder="Nom"
+            label="Nom"
+            placeholder="Votre nom"
             contentLeft={<User />}
             {...register('lastname')}
           />
           {/* dans le ...register t'ajoute le nom de la donnée que tu veux renvoyer au back */}
           <Spacer y={1} />
           <Input
-            width="350px"
+            fullWidth
             clearable
             bordered
             aria-label="modal-login-username"
             data-testid="modal-login-username"
             color="primary"
             size="lg"
-            placeholder="Prénom"
+            label="Prénom"
+            placeholder="Votre prénom"
             contentLeft={<User />}
             {...register('firstname')}
           />
           <Spacer y={1} />
           <Input
-            width="350px"
+            fullWidth
             clearable
             bordered
             aria-label="modal-login-username"
             data-testid="modal-login-username"
             color="primary"
             size="lg"
-            placeholder="Numéro de téléphone"
+            label="Numéro de téléphone"
             contentLeft={<Call />}
+            placeholder="+33 ..."
             {...register('phoneNumber')}
           />
           <Spacer y={1} />
-          <Input
-            width="350px"
-            clearable
-            bordered
-            aria-label="modal-login-username"
-            data-testid="modal-login-username"
-            color="primary"
-            type="number"
-            size="lg"
-            placeholder="Numéro de rue"
-            contentLeft={<Home />}
-            {...register('address.number')}
-          />
+          <div className="address-block">
+            <div className="address-number">
+              <Input
+                clearable
+                bordered
+                aria-label="modal-login-username"
+                data-testid="modal-login-username"
+                color="primary"
+                size="lg"
+                label="Numéro de rue"
+                placeholder="Votre numéro de rue"
+                contentLeft={<Home />}
+                {...register('address.number')}
+              />
+            </div>
+            <div id="address-street" className="address-street">
+              <Input
+                fullWidth
+                clearable
+                bordered
+                aria-label="modal-login-username"
+                data-testid="modal-login-username"
+                color="primary"
+                size="lg"
+                label="Rue"
+                placeholder="Votre rue"
+                contentLeft={<Home />}
+                {...register('address.street')}
+              />
+            </div>
+            <Input
+              className="address-city"
+              clearable
+              bordered
+              aria-label="modal-login-username"
+              data-testid="modal-login-username"
+              color="primary"
+              size="lg"
+              label="Vile"
+              placeholder="Votre ville"
+              contentLeft={<Home />}
+              {...register('address.city')}
+            />
+            <Input
+              className="address-zip-code"
+              clearable
+              bordered
+              aria-label="modal-login-username"
+              data-testid="modal-login-username"
+              color="primary"
+              size="lg"
+              label="Code postal"
+              placeholder="Votre code postal"
+              contentLeft={<Home />}
+              {...register('address.zipCode')}
+            />
+            <Input
+              className="address-country"
+              clearable
+              bordered
+              aria-label="modal-login-username"
+              data-testid="modal-login-username"
+              color="primary"
+              size="lg"
+              label="Pays"
+              placeholder="Votre pays"
+              contentLeft={<Home />}
+              {...register('address.country')}
+            />
+          </div>
           <Spacer y={1} />
-          <Input
-            width="350px"
-            clearable
-            bordered
-            aria-label="modal-login-username"
-            data-testid="modal-login-username"
-            color="primary"
-            size="lg"
-            placeholder="Rue"
-            contentLeft={<Home />}
-            {...register('address.street')}
-          />
-          <Spacer y={1} />
-          <Input
-            width="350px"
-            clearable
-            bordered
-            aria-label="modal-login-username"
-            data-testid="modal-login-username"
-            color="primary"
-            size="lg"
-            placeholder="Vile"
-            contentLeft={<Home />}
-            {...register('address.city')}
-          />
-          <Spacer y={1} />
-          <Input
-            width="350px"
-            clearable
-            bordered
-            aria-label="modal-login-username"
-            data-testid="modal-login-username"
-            color="primary"
-            size="lg"
-            placeholder="Code postal"
-            contentLeft={<Home />}
-            {...register('address.zipCode')}
-          />
-          <Spacer y={1} />
-          <Input
-            width="350px"
-            clearable
-            bordered
-            aria-label="modal-login-username"
-            data-testid="modal-login-username"
-            color="primary"
-            size="lg"
-            placeholder="Pays"
-            contentLeft={<Home />}
-            {...register('address.country')}
-          />
-          <Spacer y={1} />
-          <Radio.Group size="sm" value="homme">
-            <label>Sexe</label>
+          <Radio.Group size="sm" value="homme" row>
+            <label>Sexe :</label>
             <Radio size="sm" value="homme">
               Homme
             </Radio>
