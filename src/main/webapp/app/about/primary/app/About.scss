@@ -1,0 +1,18 @@
+.About {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.address-block {
+  display: grid;
+  grid-template:
+    'address-number address-street address-street'
+    'address-city address-zip-code address-country';
+  grid-gap: 15px;
+
+  .address-street {
+    grid-area: address-street;
+  }
+}
