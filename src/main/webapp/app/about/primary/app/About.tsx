@@ -114,7 +114,7 @@ export const About = () => {
               data-testid="modal-login-username"
               color="primary"
               size="lg"
-              label="Vile"
+              label="Ville"
               placeholder="Votre ville"
               contentLeft={<Home />}
               {...register('address.city')}
@@ -161,7 +161,7 @@ export const About = () => {
           </Radio.Group>
           <Spacer y={1} />
           <input type="checkbox" {...register('accept')} />
-          <label>J'accepte les condtions</label>
+          <label>J'accepte les conditions</label>
           <Spacer y={1} />
           <Button data-testid="submit-button" className="submit-button" type="submit" shadow auto>
             Enregistrer mes infos
