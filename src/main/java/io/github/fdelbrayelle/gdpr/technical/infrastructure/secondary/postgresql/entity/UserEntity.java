@@ -2,11 +2,10 @@ package io.github.fdelbrayelle.gdpr.technical.infrastructure.secondary.postgresq
 
 import io.github.fdelbrayelle.gdpr.user.domain.model.Sex;
 import io.github.fdelbrayelle.gdpr.user.domain.model.User;
+import java.util.UUID;
+import javax.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 @Table(name = "users")
@@ -37,7 +36,8 @@ public class UserEntity {
   private Sex sex;
 
   public static UserEntity fromDomain(final User user) {
-    return UserEntity.builder()
+    return UserEntity
+      .builder()
       .lastname(user.getLastname())
       .firstname(user.getFirstname())
       .phoneNumber(user.getPhoneNumber())
@@ -47,7 +47,8 @@ public class UserEntity {
   }
 
   public static User toDomain(final UserEntity userEntity) {
-    return User.builder()
+    return User
+      .builder()
       .id(userEntity.getId())
       .lastname(userEntity.getLastname())
       .firstname(userEntity.getFirstname())
