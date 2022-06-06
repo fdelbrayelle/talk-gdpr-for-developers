@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Input, Radio, Spacer, Text } from '@nextui-org/react';
-import { Call, Home, Password, User } from 'react-iconly';
+import {Button, Checkbox, Input, Radio, Spacer, Text} from '@nextui-org/react';
+import { Call, Heart, Home, Lock, Password, User } from 'react-iconly';
 
 import { useForm } from 'react-hook-form';
 import { customer } from '@/about/services/customer';
@@ -74,6 +74,34 @@ export const About = () => {
             contentLeft={<Call />}
             placeholder="+33 ..."
             {...register('phoneNumber')}
+          />
+          <Spacer y={1} />
+          <Input
+            fullWidth
+            clearable
+            bordered
+            aria-label="modal-login-username"
+            data-testid="modal-login-username"
+            color="primary"
+            size="lg"
+            label="Allergies"
+            contentLeft={<Heart />}
+            placeholder="..."
+            {...register('allergy')}
+          />
+          <Spacer y={1} />
+          <Input
+            fullWidth
+            clearable
+            bordered
+            aria-label="modal-login-username"
+            data-testid="modal-login-username"
+            color="primary"
+            size="lg"
+            label="Religion"
+            contentLeft={<Heart />}
+            placeholder="..."
+            {...register('religion')}
           />
           <Spacer y={1} />
           <div className="address-block">
@@ -160,7 +188,7 @@ export const About = () => {
             </Radio>
           </Radio.Group>
           <Spacer y={1} />
-          <input type="checkbox" {...register('accept')} />
+          <Checkbox checked={true} size="sm" {...register('accept')} />
           <label>J'accepte les conditions</label>
           <Spacer y={1} />
           <Button data-testid="submit-button" className="submit-button" type="submit" shadow auto>
