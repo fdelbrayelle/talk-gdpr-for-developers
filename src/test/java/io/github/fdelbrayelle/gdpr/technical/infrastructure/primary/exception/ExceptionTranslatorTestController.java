@@ -1,5 +1,6 @@
 package io.github.fdelbrayelle.gdpr.technical.infrastructure.primary.exception;
 
+import io.github.fdelbrayelle.gdpr.error.domain.AccountException;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import org.springframework.http.HttpStatus;
@@ -42,6 +43,11 @@ public class ExceptionTranslatorTestController {
   @GetMapping("/http-message-conversion-exception")
   public void httpMessageConversionException() {
     throw new HttpMessageConversionException("beer");
+  }
+
+  @GetMapping("/account-exception")
+  public void accountException() {
+    throw new AccountException("beer");
   }
 
   // jhipster-needle-exception-translator-test-controller

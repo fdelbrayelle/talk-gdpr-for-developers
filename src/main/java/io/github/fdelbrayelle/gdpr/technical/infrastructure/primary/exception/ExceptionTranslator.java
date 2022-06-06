@@ -1,5 +1,6 @@
 package io.github.fdelbrayelle.gdpr.technical.infrastructure.primary.exception;
 
+import io.github.fdelbrayelle.gdpr.error.domain.AccountException;
 import java.net.URI;
 import java.util.*;
 import javax.annotation.Nonnull;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.zalando.problem.*;
 import org.zalando.problem.spring.web.advice.ProblemHandling;
+import org.zalando.problem.spring.web.advice.security.SecurityAdviceTrait;
 import org.zalando.problem.violations.ConstraintViolationProblem;
 
 /**
@@ -24,7 +26,7 @@ import org.zalando.problem.violations.ConstraintViolationProblem;
  * The error response follows RFC7807 - Problem Details for HTTP APIs (https://tools.ietf.org/html/rfc7807).
  */
 @ControllerAdvice
-public class ExceptionTranslator implements ProblemHandling {
+public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait {
 
   private static final String FIELD_ERRORS_KEY = "fieldErrors";
   private static final String MESSAGE_KEY = "message";
@@ -105,6 +107,12 @@ public class ExceptionTranslator implements ProblemHandling {
   @ExceptionHandler
   public ResponseEntity<Problem> handleBadRequestAlertException(BadRequestAlertException ex, NativeWebRequest request) {
     return create(ex, request, HeaderUtil.createFailureAlert(applicationName, true, ex.getEntityName(), ex.getErrorKey(), ex.getMessage()));
+  }
+
+  @ExceptionHandler
+  public ResponseEntity<Problem> handleAccountException(AccountException ex, NativeWebRequest request) {
+    Problem problem = Problem.builder().withStatus(Status.UNAUTHORIZED).withTitle(ex.getMessage()).build();
+    return create(ex, problem, request);
   }
 
   // jhipster-needle-exception-translator

@@ -32,5 +32,8 @@
   }, {
     "serviceId" : "springdoc-openapi",
     "timestamp" : "2022-05-29T15:21:59.422909743Z"
+  }, {
+    "serviceId" : "springboot-oauth2",
+    "timestamp" : "2022-06-06T10:25:53.597179031Z"
   } ]
 }

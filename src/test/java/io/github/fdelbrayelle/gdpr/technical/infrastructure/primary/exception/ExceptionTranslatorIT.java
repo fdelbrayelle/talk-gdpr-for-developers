@@ -214,5 +214,15 @@ class ExceptionTranslatorIT {
       .andExpect(jsonPath("$.message").value("error.http.500"))
       .andExpect(jsonPath("$.title").value("Internal Server Error"));
   }
+
+  @Test
+  void shouldHandleAccountException() throws Exception {
+    mockMvc
+      .perform(get("/api/exception-translator-test/account-exception"))
+      .andExpect(status().isUnauthorized())
+      .andExpect(content().contentType(MediaType.APPLICATION_PROBLEM_JSON))
+      .andExpect(jsonPath("$.message").value("error.http.401"))
+      .andExpect(jsonPath("$.title").value("beer"));
+  }
   // jhipster-needle-exception-translator-it
 }
