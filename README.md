@@ -1,5 +1,9 @@
 # ⚖️ GDPR for developers
 
+## Slides
+
+You can download the [slides](https://raw.githubusercontent.com/fdelbrayelle/talk-gdpr-for-developers/main/slides.pdf) for this talk.
+
 ## Node.js and NPM
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
