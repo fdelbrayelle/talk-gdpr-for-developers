@@ -1,4 +1,4 @@
-# gdpr-for-developers
+# ⚖️ GDPR for developers
 
 ## Node.js and NPM
 
@@ -13,5 +13,17 @@ You will only need to run this command when dependencies change in [package.json
 ```
 npm install
 ```
+
+## Database
+
+The database to store personal user data is PostgreSQL.
+
+You can run it locally with: `docker-compose -f src/main/docker/postgresql.yml up`.
+
+And then connect to it with: `psql -h localhost -p 5432 -U gdpr_for_developers -W gdpr_for_developers` (no password).
+
+## Run the application
+
+With `./mvnw spring-boot:run`.
 
 <!-- jhipster-needle-readme -->

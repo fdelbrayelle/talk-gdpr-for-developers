@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, Checkbox, Input, Radio, Spacer, Text} from '@nextui-org/react';
+import { Button, Checkbox, Input, Radio, Spacer, Text } from '@nextui-org/react';
 import { Call, Heart, Home, Lock, Password, User } from 'react-iconly';
 
 import { useForm } from 'react-hook-form';
@@ -188,7 +188,7 @@ export const About = () => {
             </Radio>
           </Radio.Group>
           <Spacer y={1} />
-          <Checkbox checked={true} size="sm" {...register('accept')} />
+          <Checkbox size="sm" {...register('accept')} />
           <label>J'accepte les conditions</label>
           <Spacer y={1} />
           <Button data-testid="submit-button" className="submit-button" type="submit" shadow auto>
